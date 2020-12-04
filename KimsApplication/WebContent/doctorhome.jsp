@@ -8,6 +8,7 @@
 <br><br><br>
 <center>
 <a href="doctorhome.jsp">Profile</a> |
+<a href="view_appointment.jsp">AppointmentDetails</a> |
 <a href="index.html">LogOut</a>
 <br><br><br>
 </center>

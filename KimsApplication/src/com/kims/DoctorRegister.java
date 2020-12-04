@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(value="/DoctorRegister")
 public class DoctorRegister extends HttpServlet {
@@ -50,10 +51,12 @@ public class DoctorRegister extends HttpServlet {
 			ps.setString(3, email);
 			ps.setLong(4, phone);
 			ps.setString(5, specialisation);
+			
 			pw.println("<html><body bgcolor='wheat'><center><h1>");
 			int x=ps.executeUpdate();
 			if(x!=0) {
 				pw.println("Doctor Registered Successfully");
+				
 				pw.println("<br>");
 				pw.println("<a href='index.html'>Back To Home</a>");
 			}

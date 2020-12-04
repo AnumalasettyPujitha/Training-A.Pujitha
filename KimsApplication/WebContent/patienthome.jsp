@@ -8,6 +8,7 @@
 <br><br><br>
 <center>
 <a href="patienthome.jsp">Profile</a> |
+<a href="appointment.jsp">Appointment</a> |
 <a href="index.html">LogOut</a>
 <br><br><br>
 </center>

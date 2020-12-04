@@ -53,6 +53,8 @@ public class DoctorLogin extends HttpServlet {
 			while(rs.next()) {
 				pw.println("Doctor Logged in Successfully");
 				hs.setAttribute("did", id);
+				hs.setAttribute("dspecialist",rs.getString("specialisation"));
+				hs.setAttribute("doctor_name", rs.getString("name"));
 				pw.println("<br>");
 			}
 			pw.println("<a href='doctorhome.jsp'>DoctorProfile</a>");

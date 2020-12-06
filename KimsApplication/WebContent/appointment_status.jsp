@@ -15,24 +15,28 @@
 </center>
 <%@ include file="Connection.jsp" %>
 <table border="2" align="center" width="600" height="200" cellpadding="20">
-<tr><td>Id</td><td>Name</td><td>Mobile</td><td>Gender</td><td>Age</td><td>Address</td><td>Action</td></tr>
+<tr>
+<td>Patient_Name</td><td>Phone</td><td>Email</td><td>Gender</td><td>Blood_group</td><td>Specialist</td>
+<td>Date_of_appointment</td><td>Time_of_appointment</td><td>Status</td><td>DoctorName</td>
+</tr>
 <%
 int id=(int)session.getAttribute("pid");
-String pwd=(String)session.getAttribute("ppwd");
-String sql="select * from patient where id=?";
-ps=con.prepareStatement(sql);
+ps=con.prepareStatement("select * from appointment where pid=?");
 ps.setInt(1,id);
 ResultSet rs=ps.executeQuery();
 while(rs.next()){
 %>
 <tr>
-<td><%=rs.getInt(1) %></td>
 <td><%=rs.getString(2) %></td>
-<td><%=rs.getLong(4) %></td>
+<td><%=rs.getLong(3) %></td>
+<td><%=rs.getString(4) %></td>
 <td><%=rs.getString(5) %></td>
-<td><%=rs.getInt(6) %></td>
+<td><%=rs.getString(6) %></td>
 <td><%=rs.getString(7) %></td>
-<td><a href="patient_profile_update.jsp?id=<%=rs.getInt(1)%>">Update</a></td>
+<td><%=rs.getString(8) %></td>
+<td><%=rs.getString(9) %></td>
+<td><%=rs.getString(10) %></td>
+<td><%=rs.getString(11) %></td>
 </tr>
 <%} %>
 </table>

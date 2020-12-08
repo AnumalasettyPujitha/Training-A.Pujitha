@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="wheat">
+<br><br><br>
+<center><h1>WELCOME TO PATIENT HOME</h1></center>
+<br><br><br>
+<center>
+<a href="PatientHome.html">PatientHome</a> |
+<a href="patientprofile.jsp">Profile</a> |
+<a href="PatientProfileUpdate.html">ProfileUpdate</a> |
+<a href="appointment.html">Appointment</a> |
+<a href="appointment_status.jsp">Appointment Status</a> |
+<a href="index.html">LogOut</a>
+<br><br><br>
+<form action="./apply_appointment" method="post" align="center">
+<input type="text" name="patient_name" placeholder="Enter patient name"><br>
+<input type="number" name="phone" placeholder="Enter phone number"><br>
+<input type="email" name="email" placeholder="Enter Email"><br>
+<input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="female">Female<br>
+<select name="blood_group">
+<option value="A+">A+</option>
+<option value="B+">B+</option>
+<option value="AB+">AB+</option>
+<option value="O+">O+</option>
+<option value="A-">A-</option>
+<option value="B-">B-</option>
+<option value="AB-">AB-</option>
+<option value="O-">O-</option>
+</select><br>
+<select name="specialist">
+		<option value="DENTIST">DENTIST</option>
+		<option value="ENT">ENT</option>
+		<option value="CARDIALOGIST">CARDIALOGIST</option>
+</select> <br>
+<input type="date" name="date_of_appointment" placeholder="select date"><br>
+<input type="text" name="time_of_appointment" placeholder="enter time"><br>
+<input type="submit" value="Apply">
+</form>
+</center>
+</body>
+</html>

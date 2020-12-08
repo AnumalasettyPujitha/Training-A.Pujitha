@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="wheat">
+<br><br><br>
+<center><h1>WELCOME TO PATIENT HOME</h1></center>
+<br><br><br>
+<center>
+<a href="PatientHome.html">PatientHome</a> |
+<a href="patientprofile.jsp">Profile</a> |
+<a href="PatientProfileUpdate.html">ProfileUpdate</a> |
+<a href="appointment.jsp">Appointment</a> |
+<a href="appointment_status.jsp">Appointment Status</a> |
+<a href="index.html">LogOut</a>
+<br><br><br>
+</center>
+<form action="./patient_update" method="post" align="center">
+		<center>
+		<input type="text" name="name" placeholder="Enter Name"></input> <br>
+		<input type="number" name="mobile" placeholder="Enter Phone Number"></input> <br>
+		select gender
+		<input type="radio" name="gender" value="male">Male</input>
+		<input type="radio" name="gender" value="female">Female</input><br>
+		<input type="number" name="age" placeholder="Enter age"></input><br>
+		enter address<br><textarea rows="10" cols="20" name="address" ></textarea><br>
+		<input type="submit" value="Update"></input>
+		</center>
+	</form>
+</body>
+</html>

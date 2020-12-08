@@ -25,6 +25,7 @@ public class LoginController extends HttpServlet {
 		HttpSession hs=request.getSession();
 		hs.setAttribute("bean", lb);
 		hs.setAttribute("email", email);
+		hs.setAttribute("specialise", lb.s);
 		boolean status=false;
 		
 		try {

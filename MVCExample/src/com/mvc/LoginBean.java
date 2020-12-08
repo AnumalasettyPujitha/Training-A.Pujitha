@@ -23,6 +23,7 @@ public class LoginBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	String s="";
 
 	public boolean loginValidate(String email,String password) throws ClassNotFoundException, SQLException {
 		Connection con=ConnectionEx.connect();
@@ -30,7 +31,8 @@ public class LoginBean {
 		ps.setString(1, email);
 		ps.setString(2, password);
 		ResultSet rs=ps.executeQuery();
-		if(rs.next())
+		s=s+rs.getString("specialisation");
+		if(rs.next()) 
 			return true;
 		else
 			return false;

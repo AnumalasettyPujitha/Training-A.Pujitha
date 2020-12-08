@@ -7,8 +7,9 @@
 <center>
 <a href="PatientHome.html">PatientHome</a> |
 <a href="patientprofile.jsp">Profile</a> |
-<a href="appointment.jsp">Appointment</a> |
-<a href="appointment_status.jsp">Appointment Status</a> |
+<a href="PatientProfileUpdate.html">ProfileUpdate</a> |
+<a href="appointment.html">Appointment</a> |
+<a href="ViewStatus.html">Appointment Status</a> |
 <a href="index.html">LogOut</a>
 <br><br><br>
 </center>

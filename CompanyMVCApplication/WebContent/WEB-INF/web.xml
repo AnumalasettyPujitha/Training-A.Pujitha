@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>first</servlet-name>
+    <servlet-class>com.companymvc.EmployeeRegisterController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>first</servlet-name>
+    <url-pattern>/first</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>second</servlet-name>
+    <servlet-class>com.companymvc.EmployeeLoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>second</servlet-name>
+    <url-pattern>/employee_login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>third</servlet-name>
+    <servlet-class>com.companymvc.ManagerRegisterController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>third</servlet-name>
+    <url-pattern>/second</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>fourth</servlet-name>
+    <servlet-class>com.companymvc.ManagerLoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>fourth</servlet-name>
+    <url-pattern>/manager_login</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,13 +1,13 @@
-package com.mvc;
+package com.companymvc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginBean {
+public class ManagerLoginBean {
 	private String email,password;
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -23,19 +23,12 @@ public class LoginBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	String s="";
-	String d="";
 	public boolean loginValidate(String email,String password) throws ClassNotFoundException, SQLException {
 		Connection con=ConnectionEx.connect();
-		PreparedStatement ps=con.prepareStatement("select * from doctor where email=? and password=?");
+		PreparedStatement ps=con.prepareStatement("select * from manager where email=? and password=?");
 		ps.setString(1, email);
 		ps.setString(2, password);
 		ResultSet rs=ps.executeQuery();
-		s=s+rs.getString("specialisation");
-		d=d+rs.getString("name");
-		if(rs.next()) 
-			return true;
-		else
-			return false;
+		return rs.next();
 	}
 }

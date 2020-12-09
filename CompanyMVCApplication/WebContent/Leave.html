@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<h1>WELCOME TO EMPLOYEE LEAVE HOME</h1>
+<a href="Employee_Profile.jsp">EmployeeProfile</a> |
+<a href="Leave.html">ApplyLeave</a> |
+<a href="leave_status.jsp">LeaveStatus</a> |
+<a href="index.html">Logout</a>
+</center>
+<br><br><br>
+<form action="./apply_leave" method="post" align="center">
+<table align="center">
+<tr><td>Enter Employee Name:</td><td><input type="text" name="employee_name" placeholder="Enter employee name"></td></tr>
+<tr><td>Select Department:</td>
+<td><select name="department" placeholder="select department">
+<option value="QA">QA</option>
+<option value="Java">Java</option>
+<option value="PYTHON">Python</option>
+</select>
+</td>
+</tr>
+<tr><td>Reason:</td><td><textarea name="reason" placeholder="Enter Reason"></textarea></td></tr>
+<tr><td>Leave Starting Date:</td><td><input type="date" name="dos" placeholder="select date"></td></tr>
+<tr><td>Leave Ending Date:</td><td><input type="date" name="doe" placeholder="select date"></td></tr>
+<tr><td>Enter Leave Due:</td><td><input type="number" name="due" placeholder="Enter leave due"></td></tr>
+<tr><td></td><td><input type="submit" value="Apply"></td></tr>
+</table>
+</form>
+</body>
+</html>

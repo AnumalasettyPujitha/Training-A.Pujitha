@@ -32,4 +32,13 @@
     <servlet-name>fourth</servlet-name>
     <url-pattern>/manager_login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>fifth</servlet-name>
+    <servlet-class>com.companymvc.LeaveController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>fifth</servlet-name>
+    <url-pattern>/apply_leave</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

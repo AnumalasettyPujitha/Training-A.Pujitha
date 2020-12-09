@@ -2,11 +2,39 @@ package com.mvc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppointmentBean {
-	private String patient_name,email,gender,blood_group,specialist,date_of_appointment,time_of_appointment;
+	private String patient_name,email,gender,blood_group,specialist,date_of_appointment,time_of_appointment,status,doctor_name;
 	private long phone;
+	private int id,pid;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getDoctor_name() {
+		return doctor_name;
+	}
+	public void setDoctor_name(String doctor_name) {
+		this.doctor_name = doctor_name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
 	public String getPatient_name() {
 		return patient_name;
 	}
@@ -56,9 +84,9 @@ public class AppointmentBean {
 		this.phone = phone;
 	}
 	
-	public boolean registrationValidate(String patient_name,long phone,String email,String gender,String blood_group,String specialist,String date_of_appointment,String time_of_appointment) throws ClassNotFoundException, SQLException {
+	public boolean registrationValidate(String patient_name,long phone,String email,String gender,String blood_group,String specialist,String date_of_appointment,String time_of_appointment,int pid) throws ClassNotFoundException, SQLException {
 		Connection con=ConnectionEx.connect();
-		PreparedStatement ps=con.prepareStatement("insert into appointment(patient_name,phone,email,gender,blood_group,specialist,date_of_appointment,time_of_appointment) values(?,?,?,?,?,?,?,?)");
+		PreparedStatement ps=con.prepareStatement("insert into appointment(patient_name,phone,email,gender,blood_group,specialist,date_of_appointment,time_of_appointment,pid) values(?,?,?,?,?,?,?,?,?)");
 		ps.setString(1, patient_name);
 		ps.setLong(2,phone);
 		ps.setString(3, email);
@@ -67,11 +95,34 @@ public class AppointmentBean {
 		ps.setString(6, specialist);
 		ps.setString(7, date_of_appointment);
 		ps.setString(8, time_of_appointment);
+		ps.setInt(9, pid);
 		int x=ps.executeUpdate();
 		if(x!=0)
 			return true;
 		else
 			return false;
+	}
+	public List<AppointmentBean> status(int id) throws ClassNotFoundException, SQLException{
+		Connection con=ConnectionEx.connect();
+		PreparedStatement ps=con.prepareStatement("select * from appointment where pid=?");
+		ps.setInt(1, id);
+		ResultSet rs=ps.executeQuery();
+		ArrayList<AppointmentBean> al=new ArrayList<>();
+		if(rs.next()) {
+			AppointmentBean ab=new AppointmentBean();
+			ab.setPatient_name(rs.getString(2));
+			ab.setPhone(rs.getLong(3));
+			ab.setEmail(rs.getString(4));
+			ab.setGender(rs.getString(5));
+			ab.setBlood_group(rs.getString(6));
+			ab.setSpecialist(rs.getString(7));
+			ab.setDate_of_appointment(rs.getString(8));
+			ab.setTime_of_appointment(rs.getString(9));
+			ab.setStatus(rs.getString(10));
+			ab.setDoctor_name(rs.getString(11));
+			al.add(ab);
+		}
+		return al;
 	}
 }
 

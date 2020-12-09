@@ -23,17 +23,18 @@ public class ManagerLoginController extends HttpServlet {
 		mlb.setPassword(password);
 		
 		HttpSession hs=request.getSession();
-		hs.setAttribute("mlbean",mlb);
-		boolean status=false;
+		ManagerRegisterBean mrb=null;
 		
 		try {
-			status=mlb.loginValidate(email, password);
+			mrb=mlb.loginValidate(email, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(status)
+		if(mrb!=null) {
+			hs.setAttribute("mloginbean", mrb);
 			response.sendRedirect("ManagerHome.jsp?msg=loggedin");
+		}
 		else
 			response.sendRedirect("./Manager_Login.html");
 	}

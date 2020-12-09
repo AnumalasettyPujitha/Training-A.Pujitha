@@ -10,36 +10,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/LoginController")
-public class LoginController extends HttpServlet {
+@WebServlet("/AcceptController")
+public class AcceptController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
-		
-		LoginBean lb=new LoginBean();
-		lb.setEmail(email);
-		lb.setPassword(password);
-		
+		// TODO Auto-generated method stub
 		HttpSession hs=request.getSession();
-		hs.setAttribute("email", email);
-		RegistrationBean rb=null;
+		String dname=(String)hs.getAttribute("dname");
+		int id=Integer.parseInt(request.getParameter("id"));
+		boolean status=false;
 		
+		AcceptBean ab=new AcceptBean();
 		try {
-			rb=lb.loginValidate(email, password);
+			status=ab.accept(dname, id);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(rb!=null){
-			hs.setAttribute("rbean", rb);
-			hs.setAttribute("specialist",rb.getSpecialisation());
-			hs.setAttribute("dname", rb.getName());
-			response.sendRedirect("./DoctorHome.html?msg=Logged_in");
-		}
-		else
-			response.sendRedirect("./DoctorLogin.html?msg=failed_to_login");
+		if(status)
+			response.sendRedirect("./index.html");
 	}
 
 }

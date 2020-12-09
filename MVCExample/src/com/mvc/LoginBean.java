@@ -23,19 +23,21 @@ public class LoginBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	String s="";
-	String d="";
-	public boolean loginValidate(String email,String password) throws ClassNotFoundException, SQLException {
+	public RegistrationBean loginValidate(String email,String password) throws ClassNotFoundException, SQLException {
 		Connection con=ConnectionEx.connect();
+		RegistrationBean rb=new RegistrationBean();
 		PreparedStatement ps=con.prepareStatement("select * from doctor where email=? and password=?");
 		ps.setString(1, email);
 		ps.setString(2, password);
 		ResultSet rs=ps.executeQuery();
-		s=s+rs.getString("specialisation");
-		d=d+rs.getString("name");
-		if(rs.next()) 
-			return true;
+		if(rs.next()) { 
+			rb.setName(rs.getString("name"));
+			rb.setEmail(email);
+			rb.setPhone(rs.getLong("phone"));
+			rb.setSpecialisation(rs.getString("specialisation"));
+			return rb;
+		}
 		else
-			return false;
+			return null;
 	}
 }

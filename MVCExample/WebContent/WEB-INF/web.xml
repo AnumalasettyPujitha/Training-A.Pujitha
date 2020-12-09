@@ -56,4 +56,12 @@
     <servlet-name>appointment</servlet-name>
     <url-pattern>/apply_appointment</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ninth</servlet-name>
+    <servlet-class>com.mvc.AcceptController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ninth</servlet-name>
+    <url-pattern>/appointmentstatus</url-pattern>
+  </servlet-mapping>
 </web-app>

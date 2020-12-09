@@ -24,17 +24,18 @@ public class EmployeeLoginController extends HttpServlet {
 		elb.setPassword(password);
 		
 		HttpSession hs=request.getSession();
-		hs.setAttribute("elbean",elb);
-		boolean status=false;
+		EmployeeRegisterBean erb=null;
 		
 		try {
-			status=elb.loginValidate(email, password);
+			erb=elb.loginValidate(email, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(status)
+		if(erb!=null) {
+			hs.setAttribute("emrbean", erb);
 			response.sendRedirect("EmployeeHome.jsp?msg=loggedin");
+		}
 		else
 			response.sendRedirect("./Employee_Login.html");
 	}

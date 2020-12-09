@@ -26,21 +26,14 @@ public class AppointmentController extends HttpServlet {
 		String time_of_appointment=request.getParameter("time_of_appointment");
 
 		AppointmentBean ab=new AppointmentBean();
-		ab.setPatient_name(patient_name);
-		ab.setPhone(phone);
-		ab.setEmail(email);
-		ab.setGender(gender);
-		ab.setBlood_group(blood_group);
-		ab.setSpecialist(specialist);
-		ab.setDate_of_appointment(date_of_appointment);
-		ab.setTime_of_appointment(time_of_appointment);
 		
 		HttpSession hs=request.getSession();
 		hs.setAttribute("abbean", ab);
+		int pid=(int)hs.getAttribute("id");
 		boolean status=false;
 		
 		try {
-			status=ab.registrationValidate(patient_name, phone, email, gender, blood_group, specialist, date_of_appointment, time_of_appointment);
+			status=ab.registrationValidate(patient_name, phone, email, gender, blood_group, specialist, date_of_appointment, time_of_appointment,pid);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

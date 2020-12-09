@@ -24,18 +24,18 @@ public class PatientLoginController extends HttpServlet {
 		plb.setPassword(password);
 		
 		HttpSession hs=request.getSession();
-		hs.setAttribute("plbean", plb);
-		hs.setAttribute("id",id);
-		boolean status=false;
+		hs.setAttribute("id", id);
+		PatientRegistrationBean prb=null;
 		
 		try {
-			status=plb.loginValidate(id, password);
+			prb=plb.loginValidate(id, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(status){
-			response.sendRedirect("./PatientHome.html");
+		if(prb!=null){
+			hs.setAttribute("parbean", prb);
+			response.sendRedirect("patientprofile.jsp?msg=logged_in_Successfully");
 		}
 		else
 			response.sendRedirect("./PatientLogin.html");

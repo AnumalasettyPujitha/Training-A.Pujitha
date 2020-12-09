@@ -25,15 +25,22 @@ public class PatientLoginBean {
 		this.password = password;
 	}
 
-	public boolean loginValidate(int id,String password) throws ClassNotFoundException, SQLException {
+	public PatientRegistrationBean loginValidate(int id,String password) throws ClassNotFoundException, SQLException {
 		Connection con=ConnectionEx.connect();
+		PatientRegistrationBean prb=new PatientRegistrationBean();
 		PreparedStatement ps=con.prepareStatement("select * from patient where id=? and password=?");
 		ps.setInt(1, id);
 		ps.setString(2, password);
 		ResultSet rs=ps.executeQuery();
-		if(rs.next())
-			return true;
+		if(rs.next()) {
+			prb.setName(rs.getString("name"));
+			prb.setGender(rs.getString("gender"));
+			prb.setAge(rs.getInt("age"));
+			prb.setMobile(rs.getLong("mobile"));
+			prb.setAddress(rs.getString("address"));
+			return prb;
+		}
 		else
-			return false;
+			return null;
 	}
 }

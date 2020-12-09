@@ -9,14 +9,24 @@
 <a href="patientprofile.jsp">Profile</a> |
 <a href="PatientProfileUpdate.html">ProfileUpdate</a> |
 <a href="appointment.html">Appointment</a> |
-<a href="ViewStatus.html">Appointment Status</a> |
+<a href="appointment_status.jsp">Appointment Status</a> |
 <a href="index.html">LogOut</a>
 <br><br><br>
 </center>
-<%@page import="com.mvc.PatientLoginBean" %>
+<%@page import="com.mvc.PatientRegistrationBean" %>
 <%
-PatientLoginBean plb=(PatientLoginBean)session.getAttribute("plbean");
+PatientRegistrationBean prb=(PatientRegistrationBean)session.getAttribute("parbean");
 %>
-<%=plb.getId() %>
+
+<table border="2" align="center" width="600" height="200" cellpadding="20">
+<tr><td>Name</td><td>Mobile</td><td>Gender</td><td>Age</td><td>Address</td></tr>
+<tr>
+<td><%=prb.getName() %></td>
+<td><%=prb.getMobile() %></td>
+<td><%=prb.getGender() %></td>
+<td><%=prb.getAge() %></td>
+<td><%=prb.getAddress() %></td>
+</tr>
+</table>
 </body>
 </html>

@@ -15,10 +15,23 @@
 <a href="index.html">Logout</a>
 </center>
 
-<%@ page import="com.companymvc.EmployeeLoginBean" %>
+<%@ page import="com.companymvc.EmployeeRegisterBean" %>
 <%
-EmployeeLoginBean elb=(EmployeeLoginBean)session.getAttribute("elbean");
+EmployeeRegisterBean erb=(EmployeeRegisterBean)session.getAttribute("emrbean");
 %>
-<%=elb.getEmail() %>
+<table border="2" align="center" width="600" height="200" cellpadding="20">
+<tr><td>Name</td><td>Salary</td><td>Experience</td><td>Age</td><td>Gender</td>
+<td>Email</td><td>Address</td><td>Department</td></tr>
+<tr>
+<td><%=erb.getEname() %></td>
+<td><%=erb.getEsal() %></td>
+<td><%=erb.getExperience() %></td>
+<td><%=erb.getAge() %></td>
+<td><%=erb.getGender() %></td>
+<td><%=erb.getEmail() %></td>
+<td><%=erb.getAddress() %></td>
+<td><%=erb.getDepartment() %></td>
+</tr>
+</table>
 </body>
 </html>

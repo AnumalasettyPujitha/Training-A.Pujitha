@@ -8,9 +8,21 @@ import com.companymvc.ConnectionEx;
 
 public class EmployeeRegisterBean {
 	private String ename,gender,email,address,password,department;
-	private int esal,experience,age;
+	private int esal,experience,age,leaves_remaning,eid;
+	public int getEid() {
+		return eid;
+	}
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
 	public String getEname() {
 		return ename;
+	}
+	public int getLeaves_remaning() {
+		return leaves_remaning;
+	}
+	public void setLeaves_remaning(int leaves_remaning) {
+		this.leaves_remaning = leaves_remaning;
 	}
 	public void setEname(String ename) {
 		this.ename = ename;

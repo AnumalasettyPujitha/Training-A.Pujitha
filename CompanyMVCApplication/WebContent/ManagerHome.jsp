@@ -6,7 +6,7 @@
 <center>
 <h1>WELCOME TO MANAGER HOME</h1>
 <a href="Manager_Profile.jsp">ManagerProfile</a> |
-<a href="View_Leave.jsp">View Leave</a> |
+<a href="ViewLeave.jsp">View Leave</a> |
 <a href="index.html">Logout</a>
 </center>
 </body>

@@ -22,21 +22,16 @@ public class LeaveController extends HttpServlet {
 		String dos=request.getParameter("dos");
 		String doe=request.getParameter("doe");
 		int due=Integer.parseInt(request.getParameter("due"));
-
-		LeaveBean lb=new LeaveBean();
-		lb.setName(name);
-		lb.setDepartment(department);
-		lb.setReason(reason);
-		lb.setDos(dos);
-		lb.setDoe(doe);
-		lb.setDue(due);
+		String email=request.getParameter("email");
 		
+		LeaveBean lb=new LeaveBean();
 		HttpSession hs=request.getSession();
 		hs.setAttribute("lbean",lb);
+		int eid=(int)hs.getAttribute("eid");
 		boolean status=false;
 		
 		try {
-			status=lb.applyLeaveValidate(name, department, reason, dos, doe, due);
+			status=lb.applyLeaveValidate(name, department, reason, dos, doe, due,email,eid);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

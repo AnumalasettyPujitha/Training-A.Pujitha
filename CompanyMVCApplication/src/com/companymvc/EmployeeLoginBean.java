@@ -31,6 +31,7 @@ public class EmployeeLoginBean {
 		ps.setString(2, password);
 		ResultSet rs=ps.executeQuery();
 		if(rs.next()) {
+			erb.setEid(rs.getInt(1));
 			erb.setEname(rs.getString("ename"));
 			erb.setEsal(rs.getInt("esal"));
 			erb.setExperience(rs.getInt("experience"));
@@ -39,6 +40,7 @@ public class EmployeeLoginBean {
 			erb.setEmail(email);
 			erb.setAddress(rs.getString("address"));
 			erb.setDepartment(rs.getString("department"));
+			erb.setLeaves_remaning(rs.getInt("leaves_remaining"));
 		}
 		return erb;
 	}

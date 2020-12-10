@@ -21,7 +21,7 @@ EmployeeRegisterBean erb=(EmployeeRegisterBean)session.getAttribute("emrbean");
 %>
 <table border="2" align="center" width="600" height="200" cellpadding="20">
 <tr><td>Name</td><td>Salary</td><td>Experience</td><td>Age</td><td>Gender</td>
-<td>Email</td><td>Address</td><td>Department</td></tr>
+<td>Email</td><td>Address</td><td>Department</td><td>No.of Leaves Remaining</td></tr>
 <tr>
 <td><%=erb.getEname() %></td>
 <td><%=erb.getEsal() %></td>
@@ -31,6 +31,7 @@ EmployeeRegisterBean erb=(EmployeeRegisterBean)session.getAttribute("emrbean");
 <td><%=erb.getEmail() %></td>
 <td><%=erb.getAddress() %></td>
 <td><%=erb.getDepartment() %></td>
+<td><%=erb.getLeaves_remaning() %></td>
 </tr>
 </table>
 </body>

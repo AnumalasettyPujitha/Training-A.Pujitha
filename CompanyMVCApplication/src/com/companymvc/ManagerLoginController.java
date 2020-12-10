@@ -33,6 +33,8 @@ public class ManagerLoginController extends HttpServlet {
 		}
 		if(mrb!=null) {
 			hs.setAttribute("mloginbean", mrb);
+			hs.setAttribute("department", mrb.getDepartment());
+			hs.setAttribute("name", mrb.getName());
 			response.sendRedirect("ManagerHome.jsp?msg=loggedin");
 		}
 		else

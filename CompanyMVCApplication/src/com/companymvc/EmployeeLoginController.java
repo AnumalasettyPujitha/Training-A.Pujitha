@@ -34,6 +34,9 @@ public class EmployeeLoginController extends HttpServlet {
 		}
 		if(erb!=null) {
 			hs.setAttribute("emrbean", erb);
+			hs.setAttribute("email",email);
+			hs.setAttribute("eid", erb.getEid());
+			hs.setAttribute("leaves", erb.getLeaves_remaning());
 			response.sendRedirect("EmployeeHome.jsp?msg=loggedin");
 		}
 		else

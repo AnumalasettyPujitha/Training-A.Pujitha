@@ -40,5 +40,12 @@
     <servlet-name>fifth</servlet-name>
     <url-pattern>/apply_leave</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>accept</servlet-name>
+    <servlet-class>com.companymvc.AcceptLeaveController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>accept</servlet-name>
+    <url-pattern>/accet_leave</url-pattern>
+  </servlet-mapping>
 </web-app>

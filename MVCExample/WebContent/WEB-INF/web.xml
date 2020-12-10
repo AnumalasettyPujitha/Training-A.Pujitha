@@ -62,6 +62,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ninth</servlet-name>
-    <url-pattern>/appointmentstatus</url-pattern>
+    <url-pattern>/accet_appointment</url-pattern>
   </servlet-mapping>
 </web-app>

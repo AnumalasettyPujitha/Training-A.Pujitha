@@ -108,7 +108,7 @@ public class AppointmentBean {
 		ps.setInt(1, id);
 		ResultSet rs=ps.executeQuery();
 		ArrayList<AppointmentBean> al=new ArrayList<>();
-		if(rs.next()) {
+		while(rs.next()) {
 			AppointmentBean ab=new AppointmentBean();
 			ab.setPatient_name(rs.getString(2));
 			ab.setPhone(rs.getLong(3));

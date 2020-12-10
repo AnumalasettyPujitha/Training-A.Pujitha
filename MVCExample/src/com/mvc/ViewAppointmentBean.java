@@ -89,7 +89,7 @@ public class ViewAppointmentBean {
 		ps.setString(1, specialist);
 		ResultSet rs=ps.executeQuery();
 		ArrayList<ViewAppointmentBean> al=new ArrayList<>();
-		if(rs.next()) {
+		while(rs.next()) {
 			ViewAppointmentBean vab=new ViewAppointmentBean();
 			vab.setId(rs.getInt(1));
 			vab.setPatient_name(rs.getString(2));

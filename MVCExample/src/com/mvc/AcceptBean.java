@@ -27,7 +27,7 @@ public class AcceptBean {
 	}
 	public boolean accept(String dname,int aid) throws ClassNotFoundException, SQLException {
 		Connection con=ConnectionEx.connect();
-		PreparedStatement ps=con.prepareStatement("update appointment status=?,doctor_name=? where aid=?");
+		PreparedStatement ps=con.prepareStatement("update appointment set status=?,doctor_name=? where aid=?");
 		ps.setString(1,"accepted");
 		ps.setString(2, dname);
 		ps.setInt(3, aid);

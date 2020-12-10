@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 public class AcceptController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession hs=request.getSession();
 		String dname=(String)hs.getAttribute("dname");
@@ -30,6 +30,8 @@ public class AcceptController extends HttpServlet {
 		}
 		if(status)
 			response.sendRedirect("./index.html");
+		else 
+			response.sendRedirect("./PatientHome.html?");
 	}
 
 }

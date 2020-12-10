@@ -41,10 +41,7 @@ while(it.hasNext()){
 <%if(vab.getStatus().equalsIgnoreCase("Accepted")){ %>
 <td>Accepted</td>
 <%}else{ %>
-<td><form action="./appointmentstatus" method="post">
-<input type="hidden" name="id" value="<%=vab.getId() %>">
-<input type="submit" value="accept">
-</form></td>
+<td><a href="./accet_appointment?id=<%=vab.getId() %>">Accept</a></td>
 <%} %>
 </tr>
 <%} %>

@@ -14,15 +14,7 @@
 <br><br><br>
 <form action="apply_leave.jsp" align="center">
 <table align="center">
-<tr><td>Enter Employee Name:</td><td><input type="text" name="employee_name" placeholder="Enter employee name"></td></tr>
-<tr><td>Select Department:</td>
-<td><select name="department" placeholder="select department">
-<option value="QA">QA</option>
-<option value="Java">Java</option>
-<option value="PYTHON">Python</option>
-</select>
-</td>
-</tr>
+<tr><td></td><td><input type="hidden" name="employee_name" placeholder="Enter employee name"></td></tr>
 <tr><td>Reason:</td><td><textarea name="reason" placeholder="Enter Reason"></textarea></td></tr>
 <tr><td>Leave Starting Date:</td><td><input type="date" name="dos" placeholder="select date"></td></tr>
 <tr><td>Leave Ending Date:</td><td><input type="date" name="doe" placeholder="select date"></td></tr>

@@ -4,7 +4,7 @@
 <html>
 <body bgcolor="wheat">
 <br><br><br>
-<center><h1>WELCOME TO PATIENT HOME</h1></center>
+<center><h1>WELCOME TO PATIENT UPDATE PROFILE</h1></center>
 <br><br><br>
 <center>
 <a href="patienthome.jsp">Profile</a> |

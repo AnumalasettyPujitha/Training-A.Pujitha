@@ -36,7 +36,7 @@ while(it.hasNext()){
 <td><%=vlb.getDue() %></td>
 <%if(vlb.getStatus().equalsIgnoreCase("Accepted")){ %>
 <td>Accepted</td>
-<%}else if(vlb.getStatus().equalsIgnoreCase("Rejected")){ %>
+<%}else if(vlb.getStatus().contains("Rejected")){ %>
 <td>Rejected</td>
 <%}else{ %>
 <td><a href="./accet_leave?id=<%=vlb.getLeave_id() %>&eid=<%=eid%>&due=<%=vlb.getDue()%>&leaves=<%=leaves%>">Accept</a></td>

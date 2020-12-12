@@ -16,18 +16,18 @@ public class LeaveController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String name=request.getParameter("employee_name");
-		String department=request.getParameter("department");
 		String reason=request.getParameter("reason");
 		String dos=request.getParameter("dos");
 		String doe=request.getParameter("doe");
 		int due=Integer.parseInt(request.getParameter("due"));
-		String email=request.getParameter("email");
 		
 		LeaveBean lb=new LeaveBean();
 		HttpSession hs=request.getSession();
 		hs.setAttribute("lbean",lb);
 		int eid=(int)hs.getAttribute("eid");
+		String name=(String)hs.getAttribute("ename");
+		String department=(String)hs.getAttribute("department");
+		String email=(String)hs.getAttribute("email");
 		boolean status=false;
 		
 		try {

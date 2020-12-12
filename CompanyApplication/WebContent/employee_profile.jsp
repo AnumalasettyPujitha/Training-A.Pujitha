@@ -11,7 +11,7 @@
 <%@ include file="Connection.jsp" %>
 <table border="2" align="center" width="600" height="200" cellpadding="20">
 <tr><td>Id</td><td>Name</td><td>Salary</td><td>Experience</td><td>Age</td><td>Gender</td>
-<td>Email</td><td>Address</td><td>Department</td><td>No. of leaves remaining</td></tr>
+<td>Email</td><td>Address</td><td>Department</td><td>No. of leaves remaining</td><td>Action</td></tr>
 <%
 int eid=(int)session.getAttribute("eid");
 String sql="select * from employee where eid=?";
@@ -31,6 +31,7 @@ while(rs.next()){
 <td><%=rs.getString(8) %></td>
 <td><%=rs.getString(10) %></td>
 <td><%=rs.getInt(11) %></td>
+<td><a href="update_employee_profile.jsp?id=<%=rs.getInt(1)%>">Update</a></td>
 </tr>
 <%} %>
 </table>

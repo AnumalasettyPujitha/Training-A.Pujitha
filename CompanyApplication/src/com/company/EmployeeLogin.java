@@ -54,6 +54,8 @@ public class EmployeeLogin extends HttpServlet {
 				pw.println("Employee Logged in Successfully");
 				hs.setAttribute("eid", rs.getInt(1));
 				hs.setAttribute("ename", rs.getString("ename"));
+				hs.setAttribute("email", rs.getString("email"));
+				hs.setAttribute("department", rs.getString("department"));
 				hs.setAttribute("leaves", rs.getInt(11));
 				pw.println("<br>");
 				response.sendRedirect("EmployeeHome.jsp?msg=Loggedin");

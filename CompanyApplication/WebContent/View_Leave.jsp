@@ -34,7 +34,7 @@ while(rs.next()){
 <td><%=rs.getInt(9) %></td>
 <%if(rs.getString(7).equalsIgnoreCase("Accepted")){%>
 <td>Accepted</td>
-<%}else if(rs.getString(7).equalsIgnoreCase("rejected")){%>
+<%}else if(rs.getString(7).contains("Rejected")){%>
 <td>Rejected</td>
 <%}else{%>
 <td><a href="accept_leave.jsp?id=<%=rs.getInt(1) %>&due=<%=rs.getInt(9)%>">Accept</a></td>

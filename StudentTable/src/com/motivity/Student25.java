@@ -13,12 +13,10 @@ public class Student25 {
 				cf.configure("configuration.xml");
 				SessionFactory sf=cf.buildSessionFactory();
 				Session se=sf.openSession();
-				Student puja=new Student();
-				puja.setId(1023);
-				puja.setName("bhanu");
-				puja.setMarks(490);
 				Transaction tx=se.beginTransaction();
-				se.save(puja);
+				Student x=(Student)se.load(Student.class, 1020);
+				x.setMarks(425);
+				se.update(x);
 				tx.commit();
 				se.close();
 				sf.close();

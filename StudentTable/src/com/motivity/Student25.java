@@ -15,7 +15,8 @@ public class Student25 {
 				Session se=sf.openSession();
 				Transaction tx=se.beginTransaction();
 				Student x=(Student)se.load(Student.class, 1020);
-				x.setMarks(425);
+				System.out.println(x.getId()+" "+x.getName()+" "+x.getMarks());
+				x.setMarks(490);
 				se.update(x);
 				tx.commit();
 				se.close();

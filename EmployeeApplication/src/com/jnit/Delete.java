@@ -13,10 +13,7 @@ public class Delete {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter 1.delete all records 2.delete particular record");
 		int choice=sc.nextInt();
-		Configuration cf=new Configuration();
-		cf.configure("configuration.xml");
-		SessionFactory sf=cf.buildSessionFactory();
-		Session se=sf.openSession();
+		Session se=Config.config();
 		if(choice==1) {
 			Transaction tx=se.beginTransaction();
 			Query qr=se.createQuery("delete from Employee emp");

@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 public class Display {
@@ -15,10 +13,7 @@ public class Display {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter 1.display all records 2.display particular record");
 		int choice=sc.nextInt();
-		Configuration cf=new Configuration();
-		cf.configure("configuration.xml");
-		SessionFactory sf=cf.buildSessionFactory();
-		Session se=sf.openSession();
+		Session se=Config.config();
 		Transaction tx=se.beginTransaction();
 		if(choice==1) {
 			Query qr=se.createQuery("from Employee emp");

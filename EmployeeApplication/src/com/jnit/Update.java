@@ -3,9 +3,7 @@ package com.jnit;
 import java.util.Scanner;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 public class Update {
@@ -13,10 +11,7 @@ public class Update {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter 1.update all records 2.update particular record");
 		int choice=sc.nextInt();
-		Configuration cf=new Configuration();
-		cf.configure("configuration.xml");
-		SessionFactory sf=cf.buildSessionFactory();
-		Session se=sf.openSession();
+		Session se=Config.config();
 		if(choice==1) {
 			Transaction tx=se.beginTransaction();
 			System.out.println("enter how much salary wanted to add");

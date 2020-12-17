@@ -16,12 +16,8 @@ public class EmployeeTable {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Configuration cf=new Configuration();
-		cf.configure("configuration.xml");
-		SessionFactory sf=cf.buildSessionFactory();
-		Session se=sf.openSession();
+		Session se=Config.config();
 		Transaction tx=se.beginTransaction();
-		Employee emp=new Employee();
 		tx.commit();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("1.Insert \n2.Display \n3.Update \n4.Delete \n5.Exit");

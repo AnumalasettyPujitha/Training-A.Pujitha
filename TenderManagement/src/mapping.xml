@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.tender.SubmitTender" table="bid">
+<id name="bid_id" column="bid_id"></id>
+<property name="builder_name" column="builder_name"/>
+<property name="company_name" column="company_name"/>
+<property name="tid" column="tid"/>
+<property name="tname" column="tname"/>
+<property name="construction_type" column="construction_type"/>
+<property name="date" column="date"/>
+<property name="bid_amount" column="bid_amount"/>
+<property name="bid_file" column="bid_file"/>
+<property name="path" column="path"/>
+<property name="status" column="status"/>
+</class>
+</hibernate-mapping>

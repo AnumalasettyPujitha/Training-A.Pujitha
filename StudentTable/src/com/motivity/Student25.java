@@ -1,5 +1,9 @@
 package com.motivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -14,10 +18,19 @@ public class Student25 {
 				SessionFactory sf=cf.buildSessionFactory();
 				Session se=sf.openSession();
 				Transaction tx=se.beginTransaction();
-				Student x=(Student)se.load(Student.class, 1020);
-				System.out.println(x.getId()+" "+x.getName()+" "+x.getMarks());
-				x.setMarks(490);
-				se.update(x);
+				Student s=new Student();
+				SimpleDateFormat sdf=new SimpleDateFormat("mm-dd-yyyy");
+				String str="02-12-2021";
+				try {
+					Date date = sdf.parse(str);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				s.setId(1025);
+				s.setName("Sai");
+				s.setMarks(480);
+				se.save(s);
 				tx.commit();
 				se.close();
 				sf.close();

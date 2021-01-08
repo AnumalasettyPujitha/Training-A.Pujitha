@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.tender.CreateTenderBean" table="tender">
+<id name="tid" column="tid"></id>
+<property name="tname" column="tname"/>
+<property name="starting_date" column="starting_date"/>
+<property name="closing_date" column="ending_date"/>
+<property name="construction_type" column="construction_type"/>
+<property name="amount" column="amount"/>
+</class>
+</hibernate-mapping>

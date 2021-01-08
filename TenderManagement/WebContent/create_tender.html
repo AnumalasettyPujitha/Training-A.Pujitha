@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url("https://media1.picsearch.com/is?-gAwHwzQNOOVy0wgxvYnT2RsT5hQ9SMEm9iamw8jD3s&height=209");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+</style>
+</head>
+<body align="center">
+<h1 style="color:blue">WELCOME TO CREATE TENDER PAGE</h1>
+<br><br><br>
+<a href="ViewProfile.jsp" style="color:brown">View Profile</a> |
+<a href="create_tender.html" style="color:brown">Create Tender</a> |
+<a href="Viewbiddingdetails.jsp" style="color:brown">View Bid Details</a> |
+<a href="index.html" style="color:brown">Logout</a>
+<br><br><br>
+<form action="./createtender" method="post" align="center">
+<table align="center">
+<tr><td>Enter Tender Name:</td><td><input type="text" name="tname" placeholder="enter tender name"/></td></tr>
+<tr><td>select tender starting date:</td><td><input type="date" name="starting_date" placeholder="enter starting date"/></td></tr>
+<tr><td>select tender closing date:</td><td><input type="date" name="closing_date" placeholder="enter closing date"/></td></tr>
+<tr><td>Enter amount:</td><td><input type="number" name="amount" placeholder="enter amount"/></td></tr>
+</table>
+<input type="submit" value="create"/>
+</form>
+</body>
+</html>

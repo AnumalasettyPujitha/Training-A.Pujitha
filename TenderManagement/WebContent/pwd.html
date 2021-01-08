@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url("https://media1.picsearch.com/is?-gAwHwzQNOOVy0wgxvYnT2RsT5hQ9SMEm9iamw8jD3s&height=209");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+</style>
+</head>
+<body align="center">
+<h1 style="color:blue">WELCOME  TO  CREATE  PWD  HOME</h1>
+<a href="accept_builder.jsp" style="color:red">Accept Builders/Show Builders</a> |
+<a href="pwd.html" style="color:red">Create PWD</a> |
+<a href="view_pwd.jsp" style="color:red">View PWD</a> |
+<a href="view_createdtenders.jsp" style="color:red">View Created Tenders</a> |
+<a href="view_bidder.jsp" style="color:red">View Bidding Details</a> |
+<a href="index.html" style="color:red">Logout</a>
+<br><br><br>
+<form action="./create_pwd" method="post" align="center">
+<table align="center">
+<tr><td>Enter PWD name:</td><td><input type="text" name="name"/></td></tr>
+<tr><td>Enter PWD password:</td><td><input type="password" name="password"/></td></tr>
+<tr><td>Select Construction Type:</td>
+<td><select name="ctype">
+<option value="building">Building</option>
+<option value="apartment">Apartment</option>
+<option value="Bridge">Bridge</option>
+<option value="port">Port</option>
+</select></td>
+</tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+</table>
+<input type="submit" value="create"/>
+</form>
+</body>
+</html>

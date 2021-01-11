@@ -7,6 +7,5 @@
 <id name="id" column="sid"/>
 <property name="name" column="sname"/>
 <property name="marks" column="smarks"/>
-<property name="date" column="date"/>
 </class>
 </hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.transaction.Payment" table="payment">
+<id name="payment_id" column="payment_id"/>
+<property name="amount" column="amount"></property>
+
+<union-subclass name="com.transaction.CreditCard">
+<property name="card_type" column="cc_type"></property>
+<property name="card_number" column="cc_number"></property>
+</union-subclass>
+
+<union-subclass name="com.transaction.Cheque">
+<property name="cheque_type" column="cq_type"></property>
+<property name="cheque_no" column="cq_number"></property>
+</union-subclass>
+
+</class>
+</hibernate-mapping>

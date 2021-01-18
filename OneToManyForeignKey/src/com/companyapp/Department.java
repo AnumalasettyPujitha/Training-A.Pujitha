@@ -1,11 +1,13 @@
 package com.companyapp;
 
+
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -14,20 +16,29 @@ import javax.persistence.Table;
 public class Department {
 	@Id
 	@Column(name="dept_id")
-	private int departmentId;
+	private int dept_id;
 	
 	@Column(name="dept_name")
 	private String departmentName;
 	
-	@OneToMany(mappedBy="department")
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="department_id",referencedColumnName="dept_id")
 	private Set<Employee> employees;
-
-	public int getDepartmentId() {
-		return departmentId;
+		
+	public Set<Employee> getEmployee() {
+		return employees;
 	}
 
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
+	public void setEmployee(Set<Employee> employee) {
+		this.employees = employee;
+	}
+
+	public int getDept_id() {
+		return dept_id;
+	}
+
+	public void setDept_id(int dept_id) {
+		this.dept_id = dept_id;
 	}
 
 	public String getDepartmentName() {
@@ -38,13 +49,5 @@ public class Department {
 		this.departmentName = departmentName;
 	}
 
-	public Set<Employee> getEmployees() {
-		return employees;
-	}
-
-	public void setEmployees(Set<Employee> employees) {
-		this.employees = employees;
-	}
-	
 	
 }

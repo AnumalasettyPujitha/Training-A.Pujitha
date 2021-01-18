@@ -1,11 +1,9 @@
 package com.companyapp;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,9 +16,7 @@ public class Employee {
 	private String name;
 	@Column(name="esal")
 	private int sal;
-	@ManyToOne
-	@JoinColumn(name="department_id")
-	private Department department;
+	
 	public int getEmpId() {
 		return empId;
 	}
@@ -39,12 +35,5 @@ public class Employee {
 	public void setSal(int sal) {
 		this.sal = sal;
 	}
-	public Department getDepartment() {
-		return department;
-	}
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-	
 	
 }

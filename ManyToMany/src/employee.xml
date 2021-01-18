@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.manytomany.Employee" table="Employee12">
+<id name="emp_id" column="eid"/>
+<property name="emp_name" column="ename" length="30"/>
+<property name="emp_department" column="department" length="30"/>
+<set name="project" cascade="all" table="employee_project">
+<key column="emp_id"></key>
+<many-to-many class="com.manytomany.Project" column="project_id"></many-to-many>
+</set>
+</class>
+</hibernate-mapping>

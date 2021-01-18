@@ -11,7 +11,7 @@
 <property name="show_sql">true</property>
 <property name="dialet">org.hibernate.dialect.MySQLDialect</property>
 <property name="hbm2ddl.auto">create</property>
-<mapping class="com.companyapp.Department"/>
-<mapping class="com.companyapp.Employee"/>
+<mapping resource="employee.xml"/>
+<mapping resource="project.xml"/>
 </session-factory>
 </hibernate-configuration>

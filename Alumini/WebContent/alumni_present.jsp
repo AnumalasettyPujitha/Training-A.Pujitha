@@ -10,14 +10,14 @@
 <%@include file="alumni.jsp" %>
 <h1 align="center">Welcome to Alumni Update Profile Page</h1>
 <%@page import="com.pojo.Alumni" %>
-<%Alumni s=new Alumni();%>
+<%Alumni s=(Alumni)session.getAttribute("alumni");%>
 <div class="container">
 		<div class="row justify-content-center align-items-center"
 			style="height: 50vh">
 			<div class="col-4">
 				<div class="card">
 					<div class="card-body">
-						<form action="./alumni_update" method="post" enctype = "multipart/form-data">
+						<form action="./alumni_present" method="post">
 							<div class="form-group">
 								Working Status: <br>
 								<%if(s.getPresent().equals("furtherstudies")){ %>

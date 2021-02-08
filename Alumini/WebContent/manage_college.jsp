@@ -9,7 +9,7 @@
 <body>
 	<%@include file="directorate.jsp"%>
 	<h1 align="center">Welcome to Manage College Page</h1>
-	<%@page import="com.pojo.College,java.util.*"%>
+	<%@page import="com.pojo.College,com.directorate.ManageCollegeBean,java.util.*"%>
 	<div class="container">
 		<div class="row justify-content-center align-items-center"
 			style="height: 38vh">
@@ -43,20 +43,17 @@
 				</tr>
 			</thead>
 			<%
-				String firstname = request.getParameter("firstname");
-			String department = request.getParameter("department");
-			String lastname = request.getParameter("lastname");
+				String collegename = request.getParameter("collegename");
+			String ccode = request.getParameter("ccode");
 			List li = null;
-			/* if(firstname==null&&lastname==null&&department==null||firstname.equals("")&&lastname.equals("")&&department.equals(""))
-				li = ManageFacultyBean.getFaculty();
-
+			if(collegename==null&&ccode==null||collegename.equals("")&&ccode.equals(""))
+				 li = ManageCollegeBean.getColleges();
 			else
-				li=ManageFacultyBean.searchFaculty(firstname,lastname,department);
-					 
+				li=ManageCollegeBean.getCollegesBySearch(collegename,ccode);
 			Iterator i = li.iterator();
 			while (i.hasNext()) {
-				College f = (College) i.next(); */ {
-				College f = new College();
+				College f = (College) i.next();
+				
 			%>
 			<tbody>
 				<tr>

@@ -9,6 +9,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.pojo.Alumni;
 import com.pojo.College;
+import com.pojo.Email;
 import com.pojo.Events;
 
 
@@ -27,6 +28,7 @@ public class Configure {
 		c.addAnnotatedClass(Alumni.class);
 		c.addAnnotatedClass(College.class);
 		c.addAnnotatedClass(Events.class);
+		c.addAnnotatedClass(Email.class);
 		SessionFactory sf=c.addProperties(p).buildSessionFactory();
 		return sf.openSession();
 	}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />  
+<property name="url" value="jdbc:mysql://localhost:3306/motivity" />  
+<property name="username" value="root" />  
+<property name="password" value="root" />  
+</bean>  
+  
+<bean id="jtemplate"   
+ class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">  
+<constructor-arg ref="ds"></constructor-arg>  
+</bean>  
+  
+<bean id="edao" class="com.employee.EmployeeDao">  
+<constructor-arg>  
+<ref bean="jtemplate"/>  
+</constructor-arg>  
+</bean>  
+</beans>      

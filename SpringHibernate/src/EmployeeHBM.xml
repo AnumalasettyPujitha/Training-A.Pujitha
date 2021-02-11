@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<class name="com.employee.Employee" table="Employee112">
+<class name="com.employee.Employee" table="Employee111">
 <id name="eid" column="Employee_id"></id>
 <property name="ename" column="Employee_name"></property>
 <property name="esal" column="salary"></property>

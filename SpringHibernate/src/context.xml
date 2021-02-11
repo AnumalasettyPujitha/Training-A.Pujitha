@@ -14,12 +14,12 @@
 <property name="dataSource" ref="ds"></property>
 <property name="mappingResources">
 <list>
-<value>employee.xml</value>
+<value>EmployeeHBM.xml</value>
 </list>
 </property>
 <property name="hibernateProperties">
 <props>
-<prop key="hibernate.dialet">org.hibernate.dialect.MySQLdialect</prop>
+<prop key="hibernate.dialet">org.hibernate.dialect.hsqldialect</prop>
 <prop key="hibernate.hbm2ddl.auto">update</prop>
 <prop key="hibernate.show_sql">true</prop>
 </props>

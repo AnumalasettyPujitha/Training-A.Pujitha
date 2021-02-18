@@ -1,0 +1,27 @@
+FOLEDER
+	index.html
+
+images/
+	logos
+	banners
+	Photos..etc
+css/
+	styles.css
+	bootstrap.css
+
+media/
+	videos
+	audios
+	flash files
+
+js/	
+	files.js
+	bootstrap.js
+	jquery.js
+
+
+webfonts/
+	files..
+
+readme.txt-> peoject explanation..etc
+
